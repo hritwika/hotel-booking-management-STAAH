@@ -41,7 +41,7 @@ class HotelBookingController {
         long bookedRooms = bookings.stream()
             .filter(b -> b.getHotelId().equals(hotelId) && b.getRoomType().equals(roomType) && overlaps(dates, b.getDates()))
             .count();
-        
+        //this is for availibility endpoint
         return (int) (totalRooms - bookedRooms);
     }
 
